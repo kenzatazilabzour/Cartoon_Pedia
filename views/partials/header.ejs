@@ -2,11 +2,12 @@
   <h1>CartoonPedia</h1>
   <link rel='stylesheet' href='/stylesheets/style.css' />
   <nav>
-    <img src="/images/camera.svg">
-    <a href="/home" <%- title==='Cartoons' ? 'class="active"' : '' %>>CARTOONS</a>
+    <img src="/images/.svg">
+    <a href="/home" <%- title==='Home' ? 'class="active"' : '' %>> Home </a>
+    <a href="/cartoons" <%- title==='All Cartoons' ? 'class="active"' : '' %>> ALL CARTOONS</a>
     <% if (user) { %>
       <a href="/episodes/new" <%- title==='Add episodes' ? 'class="active"' : '' %>>ADD Episodes</a>
-      <a href="/characters/new" <%- title==='Add Character' ? 'class="active"' : '' %>>ADD Character</a>
+      <a href="/cartoons/new" <%- title==='Add Cartoon' ? 'class="active"' : '' %>>ADD Cartoon</a>
       <a href="/logout">LOG OUT</a>
       <% } else { %>
         <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
