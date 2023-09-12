@@ -11,9 +11,9 @@ require('dotenv').config();
 require('./config/database');
 require('./config/passport');
 var indexRouter = require('./routes/index');
-//var usersRouter = require('./routes/users');
+var usersRouter = require('./routes/users');
 const charactersRouter = require('./routes/characters');
-const epsiodesRouter = require('./routes/episodes')
+const episodesRouter = require('./routes/episodes')
 //const reviewsRouter = require('./routes/reviews');
 var app = express();
 //config passport middleware

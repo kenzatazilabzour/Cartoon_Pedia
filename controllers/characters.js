@@ -10,7 +10,8 @@ async function listCharacters(req, res) {
 }
 
 async function newCharacter(req, res) {
-  res.render('characters/new', { title: 'Add Character' });
+  const error = ''
+  res.render('characters/new', { title: 'Add Character', error });
 }
 
 async function createCharacter(req, res) {

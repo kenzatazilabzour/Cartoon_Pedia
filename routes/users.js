@@ -1,5 +1,5 @@
-// var express = require('express');
-// var router = express.Router();
+ var express = require('express');
+ var router = express.Router();
 // const userCtrl = require('../controllers/user');
 
 // /* GET users listing. */
@@ -13,4 +13,4 @@
 //router.get('/:userId/edit', ensureAuthenticated, userController.editUserProfile);
 //router.post('/:userId/edit', ensureAuthenticated, userController.updateUserProfile);
 
-//module.exports = router;
+module.exports = router;
