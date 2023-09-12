@@ -13,6 +13,7 @@ require('./config/passport');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 const cartoonsRouter = require('./routes/cartoons');
+const epsiodesRouter = require('./routes/episodes')
 //const reviewsRouter = require('./routes/reviews');
 var app = express();
 //config passport middleware
@@ -38,7 +39,8 @@ app.use(function (req, res, next) {
 });
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/cartoons',cartoonsRouter );
+app.use('/cartoons',cartoonsRouter);
+app.use('/episodes',episodesRouter);
 // Add this middleware BELOW passport middleware
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
