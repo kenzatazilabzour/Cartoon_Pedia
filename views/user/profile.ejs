@@ -1,0 +1,20 @@
+<%- include('../partials/header') %>
+
+<head>
+  <title>
+    <%= user.username %> - User Profile
+  </title>
+</head>
+
+<body>
+  <h1>
+    <%= user.username %> - User Profile
+  </h1>
+  <!-- Display user profile information -->
+  <p>Role: <%= user.role %>
+  </p>
+  <!-- Additional user profile information can be displayed here -->
+  <a href="/users">Back to All Users</a>
+</body>
+
+<%- include('../partials/footer') %>

@@ -1,0 +1,25 @@
+<%- include('../partials/header') %>
+
+<head>
+  <meta charset="UTF-8">
+  <title>Episode Guide - <%= character.name %>
+  </title>
+</head>
+
+<body>
+  <h1>Episode Guide - <%= character.name %>
+  </h1>
+  <h2>Episodes featuring <%= character.name %>
+  </h2>
+  <ul>
+    <% episodes.forEach(function(episode) { %>
+      <li><a href="/episodes/<%= episode._id %>">
+          <%= episode.title %>
+        </a></li>
+      <% }); %>
+  </ul>
+  <a href="/characters">Back to All Characters</a>
+</body>
+
+
+  <%- include('../partials/footer') %>

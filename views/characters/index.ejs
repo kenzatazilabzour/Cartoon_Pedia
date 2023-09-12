@@ -1,0 +1,30 @@
+<%- include('../partials/header') %>
+<body>
+  <h1>
+    <%= character.name %> - Character Profile
+  </h1>
+  <img src="<%= character.image %>" alt="<%= character.name %> Image">
+  <p>
+    <%= character.biography %>
+  </p>
+  <h2>Superpowers</h2>
+  <ul>
+    <% character.superpowers.forEach(function(superpower) { %>
+      <li>
+        <%= superpower %>
+      </li>
+      <% }); %>
+  </ul>
+  <h2>Famous Quotes</h2>
+  <ul>
+    <% character.famousQuotes.forEach(function(quote) { %>
+      <li>
+        <%= quote %>
+      </li>
+      <% }); %>
+  </ul>
+</body>
+
+</html>
+
+  <%- include('../partials/footer') %>

@@ -1,7 +1,6 @@
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
-const User = require('../models/user');
-
+const User = require('../models/user')
 passport.use(new GoogleStrategy(
   // Configuration object
   {
@@ -18,6 +17,7 @@ passport.use(new GoogleStrategy(
     try {
       // A user has logged in with OAuth...
       let user = await User.findOne({ googleId: profile.id });
+      console.log(user);
       // Existing user found, so provide it to passport
       if (user) return cb(null, user);
       // We have a new user via OAuth!
@@ -33,12 +33,9 @@ passport.use(new GoogleStrategy(
     }
   }
 ));
-
 passport.serializeUser(function (user, cb) {
   cb(null, user._id);
 });
-
 passport.deserializeUser(async function (userId, cb) {
-  // It's nice to be able to use await in-line!
   cb(null, await User.findById(userId));
 });

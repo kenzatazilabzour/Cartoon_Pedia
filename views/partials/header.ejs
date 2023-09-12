@@ -4,10 +4,10 @@
   <nav>
     <img src="/images/.svg">
     <a href="/home" <%- title==='Home' ? 'class="active"' : '' %>> Home </a>
-    <a href="/cartoons" <%- title==='All Cartoons' ? 'class="active"' : '' %>> ALL CARTOONS</a>
+    <a href="/characters" <%- title==='All Characters' ? 'class="active"' : '' %>> ALL Characters</a>
     <% if (user) { %>
       <a href="/episodes/new" <%- title==='Add episodes' ? 'class="active"' : '' %>>ADD Episodes</a>
-      <a href="/cartoons/new" <%- title==='Add Cartoon' ? 'class="active"' : '' %>>ADD Cartoon</a>
+      <a href="/characters/new" <%- title==='Add Characters' ? 'class="active"' : '' %>>ADD Characters</a>
       <a href="/logout">LOG OUT</a>
       <% } else { %>
         <a href="/auth/google" class="login">LOG IN&nbsp;<img src="https://i.imgur.com/FHjYyi0.png"></a>
