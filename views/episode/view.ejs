@@ -1,0 +1,18 @@
+<%- include('../partials/header') %>
+
+  <body>
+    <h1>
+      <%= episode.title %>
+    </h1>
+    <p>
+      <%= episode.description %>
+    </p>
+    <a href="/episodes/<%= episode._id %>/edit">Edit Episode</a>
+    <form action="/episodes/<%= episode._id %>" method="POST">
+      <input type="hidden" name="_method" value="DELETE">
+      <button type="submit">Delete Episode</button>
+    </form>
+    <a href="/episodes">Back to All Episodes</a>
+  </body>
+
+  <%- include('../partials/footer') %>

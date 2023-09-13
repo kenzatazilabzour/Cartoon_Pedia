@@ -11,9 +11,9 @@ require('dotenv').config();
 require('./config/database');
 require('./config/passport');
 var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var userRouter = require('./routes/user');
 const charactersRouter = require('./routes/characters');
-const episodesRouter = require('./routes/episodes')
+const episodeRouter = require('./routes/episodes')
 //const reviewsRouter = require('./routes/reviews');
 var app = express();
 //config passport middleware
@@ -38,9 +38,9 @@ app.use(function (req, res, next) {
   next();
 });
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/user', userRouter);
 app.use('/characters',charactersRouter);
-app.use('/episodes',episodesRouter);
+app.use('/episodes',episodeRouter);
 // Add this middleware BELOW passport middleware
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

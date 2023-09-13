@@ -1,14 +1,26 @@
 const express = require('express');
 const router = express.Router();
-const episodeControllers = require('../controllers/episode');
+const episodesCtrl = require('../controllers/episodes');
 
-//Route to view a specific episode
-// router.get('/:episodeId', episodeControllers.viewEpisode);
+// Route to list all episodes
+router.get('/episodes', episodesCtrl.index);
 
-//Route to create a new episode (only accessible to contributors and admins)
-// router.get('/new', ensureContributorOrAdmin, episodeControllers.createEpisode);
-// router.post('/new', ensureContributorOrAdmin, episodeControllers.saveEpisode);
+// Route to view a specific episode
+router.get('/episodes/:id', episodesCtrl.show);
 
-//Add more episode-related routes as needed, such as editing, listing, or deleting episodes
+// Route to display a form for creating a new episode
+router.get('/episodes/new', episodesCtrl.new);
+
+// Route to create a new episode
+router.post('/episode', episodesCtrl.create);
+
+// Route to display a form for editing an episode
+router.get('/episodes/:id/edit', episodesCtrl.edit);
+
+// Route to update an episode
+//router.put('/episodes/:id', episodesCtrl.update);
+
+// Route to delete an episode
+//router.delete('/episodes/:id', episodesCtrl.delete);
 
 module.exports = router;

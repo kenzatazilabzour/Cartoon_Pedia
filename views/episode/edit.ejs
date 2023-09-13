@@ -1,0 +1,15 @@
+<%- include('../partials/header') %>
+
+  <body>
+    <h1>Edit Episode</h1>
+    <form action="/episodes/<%= episode._id %>" method="POST">
+      <input type="hidden" name="_method" value="PUT">
+      <input type="text" name="title" value="<%= episode.title %>" required>
+      <textarea name="description" required><%= episode.description %></textarea>
+      <button type="submit">Update Episode</button>
+    </form>
+    <a href="/episodes/<%= episode._id %>">View Episode</a>
+    <a href="/episodes">Back to All Episodes</a>
+  </body>
+
+  <%- include('../partials/footer') %>

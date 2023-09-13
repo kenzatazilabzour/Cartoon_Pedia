@@ -1,0 +1,17 @@
+<%- include('../partials/header') %>
+
+  <body>
+    <h1>All Episodes</h1>
+    <ul>
+      <% episodes.forEach(function(episode) { %>
+        <li>
+          <a href="/episodes/<%= episode._id %>">
+            <%= episode.title %>
+          </a>
+        </li>
+        <% }); %>
+    </ul>
+    <a href="/episodes/new">Add New Episode</a>
+  </body>
+
+  <%- include('../partials/footer') %>
