@@ -1,4 +1,5 @@
 const Character = require('../models/character');
+const Episode = require('../models/episode');
 
 module.exports = {
   index,
@@ -60,11 +61,11 @@ async function update(req, res) {
 
 async function view(req, res) {
   const character = await Character.findById(req.params.id);
-
+  const episodes = await Episode.find({'characters._id': req.params.id});
   if (!character) {
     res.status(404).send('Character not found');
   } else {
-    res.render('characters/show', { title: 'Character Profile', character });
+    res.render('characters/show', { title: 'Character Profile', character, episodes });
   }
 }
 

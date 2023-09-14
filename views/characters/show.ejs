@@ -23,12 +23,20 @@
       </li>
       <% }); %>
   </ul>
-
+<h2>Episodes featuring <%= character.name %></h2>
+<ul>
+  <% episodes.forEach(function(episode) { %>
+    <li><a href="/episodes/<%= episode._id %>">
+        <%= episode.title %>
+      </a></li>
+    <% }); %>
+</ul>
   <% if (user) {  %>
     <form action="/characters/<%= character._id %>?_method=DELETE" method="POST">
           <button type="submit">Delete</button>
     </form>
     <a href="/characters/<%= character._id %>/edit">Edit</a>
   <% }; %>
+
 
     <%- include('../partials/footer') %>

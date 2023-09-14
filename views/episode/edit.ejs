@@ -1,6 +1,5 @@
 <%- include('../partials/header') %>
 
-  <body>
     <h1>Edit Episode</h1>
     <form action="/episodes/<%= episode._id %>" method="POST">
       <input type="hidden" name="_method" value="PUT">
@@ -10,6 +9,5 @@
     </form>
     <a href="/episodes/<%= episode._id %>">View Episode</a>
     <a href="/episodes">Back to All Episodes</a>
-  </body>
 
   <%- include('../partials/footer') %>

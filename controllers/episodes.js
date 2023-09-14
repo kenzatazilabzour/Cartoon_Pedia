@@ -22,7 +22,7 @@ async function index(req, res) {
 
 // Display details for a specific episode
 async function show(req, res) {
-  const episode = await Episode.findById(req.params.id);
+  const episode = await Episode.findById(req.params.id).populate('characters');
 
   if (!episode) {
     res.status(404).send('Episode not found');
@@ -38,17 +38,8 @@ async function newEpisode(req, res) {
 }
 
 async function create(req, res) {
-  const { title, description, season, episodeNumber } = req.body;
-
-  const episode = new Episode({
-    title,
-    description,
-    season,
-    episodeNumber,
-  });
-
   try {
-    await episode.save();
+    await Episode.create(req.body);
     res.redirect('/episodes');
   } catch (error) {
     res.render('episode/new', { title: 'Add Episode', error });
