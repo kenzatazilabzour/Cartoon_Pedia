@@ -1,13 +1,18 @@
 <%- include('../partials/header') %>
 
-  <body>
+
     <h1>Create New Episode</h1>
     <form action="/episodes" method="POST">
       <input type="text" name="title" placeholder="Title" required>
       <textarea name="description" placeholder="Description" required></textarea>
+      <select name="characters" multiple>
+        <% characters.forEach(function(character) { %>
+          <option value="<%= character._id %>"><%= character.name %></option>
+          <% }); %>
+      </select>
       <button type="submit">Create Episode</button>
     </form>
     <a href="/episodes">Back to All Episodes</a>
-  </body>
+
 
   <%- include('../partials/footer') %>

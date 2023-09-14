@@ -13,8 +13,8 @@ module.exports = {
 // Display a list of all episodes
 async function index(req, res) {
   try {
-    const episode = await Episode.find();
-    res.render('episode/index', { title: 'All Episodes', episode });
+    const episodes = await Episode.find({});
+    res.render('episode/index', { title: 'All Episodes', episodes });
   } catch (error) {
     res.status(500).send('Error listing episodes');
   }
@@ -33,8 +33,10 @@ async function show(req, res) {
 
 // Create a new episode
 async function newEpisode(req, res) {
-  res.render('episode/new', { title: 'Add Episode' });
+  //const characters = await Character.find({});
+  res.render('episode/new', { title: 'Add Episode'});
 }
+
 async function create(req, res) {
   const { title, description, season, episodeNumber } = req.body;
 

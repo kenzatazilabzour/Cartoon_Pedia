@@ -10,10 +10,6 @@ const characterSchema = new mongoose.Schema({
   biography: String,
   superpowers: [String],
   famousQuotes: [String],
-  episodes: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Episode',
-  }],
 });
 
 const Character = mongoose.model('Character', characterSchema);
