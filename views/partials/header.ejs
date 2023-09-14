@@ -14,6 +14,7 @@
     <img src="/images/.svg">
     <a href="/" <%- title==='Home' ? 'class="active"' : '' %>> Home </a>
     <a href="/characters" <%- title==='All Characters' ? 'class="active"' : '' %>> ALL Characters</a>
+    <a href="/episodes" <%- title==='All Episodes' ? 'class="active"' : '' %>> ALL Episodes</a>
     <% if (user) { %>
       <a href="/episodes/new" <%- title==='Add episodes' ? 'class="active"' : '' %>>ADD Episodes</a>
       <a href="/characters/new" <%- title==='Add Characters' ? 'class="active"' : '' %>>ADD Characters</a>

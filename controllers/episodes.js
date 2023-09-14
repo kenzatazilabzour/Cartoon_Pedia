@@ -33,8 +33,8 @@ async function show(req, res) {
 
 // Create a new episode
 async function newEpisode(req, res) {
-  //const characters = await Character.find({});
-  res.render('episode/new', { title: 'Add Episode'});
+  const characters = await Character.find({});
+  res.render('episode/new', { title: 'Add Episode', characters});
 }
 
 async function create(req, res) {
@@ -49,7 +49,7 @@ async function create(req, res) {
 
   try {
     await episode.save();
-    res.redirect('/episode');
+    res.redirect('/episodes');
   } catch (error) {
     res.render('episode/new', { title: 'Add Episode', error });
   }

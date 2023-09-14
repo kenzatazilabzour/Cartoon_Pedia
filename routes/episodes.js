@@ -6,11 +6,11 @@ const ensureLoggedIn = require('../config/ensureLoggedIn');
 // Route to list all episodes
 router.get('/', episodesCtrl.index);
 
-// Route to view a specific episode
-router.get('/:id', episodesCtrl.show);
-
 // Route to display a form for creating a new episode
 router.get('/new', ensureLoggedIn, episodesCtrl.new);
+
+// Route to view a specific episode
+router.get('/:id', episodesCtrl.show);
 
 // Route to create a new episode
 router.post('/', ensureLoggedIn, episodesCtrl.create);
