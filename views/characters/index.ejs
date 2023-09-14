@@ -1,45 +1,14 @@
 <%- include('../partials/header') %>
 
-  <body>
     <h1>
       <%= title %>
     </h1>
     <ul>
       <% characters.forEach(function(character) { %>
         <li>
-          <a href="/listcharacters/<%= character._id %>">
+          <a href="/characters/<%= character._id %>">
             <%= character.name %>
           </a>
         </li>
         <% }); %>
     </ul>
-    <a href="/characters/new">Add New Character</a>
-
-    <% characters.forEach(function(character) { %>
-      <h2>
-        <%= character.name %> - Character Profile
-      </h2>
-      <img src="<%= character.image %>" alt="<%= character.name %> Image">
-      <p>
-        <%= character.biography %>
-      </p>
-      <h3>Superpowers</h3>
-      <ul>
-        <% character.superpowers.forEach(function(superpower) { %>
-          <li>
-            <%= superpower %>
-          </li>
-          <% }); %>
-      </ul>
-      <h4>Famous Quotes</h4>
-      <ul>
-        <% character.famousQuotes.forEach(function(quote) { %>
-          <li>
-            <%= quote %>
-          </li>
-          <% }); %>
-      </ul>
-      <% }); %>
-  </body>
-
-  <%- include('../partials/footer') %>

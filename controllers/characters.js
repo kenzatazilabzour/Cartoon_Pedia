@@ -25,18 +25,8 @@ async function newCharacter(req, res) {
 }
 
 async function create(req, res) {
-  const { name, image, biography, superpowers, famousQuotes } = req.body;
-
-  const character = new Character({
-    name,
-    image,
-    biography,
-    superpowers,
-    famousQuotes,
-  });
-
   try {
-    await character.save();
+    await Character.create(req.body);
     res.redirect('/characters');
   } catch (error) {
 
@@ -55,20 +45,8 @@ async function edit(req, res) {
 }
 
 async function update(req, res) {
-  const { name, image, biography, superpowers, famousQuotes } = req.body;
-
   try {
-    const character = await Character.findByIdAndUpdate(
-      req.params.id,
-      {
-        name,
-        image,
-        biography,
-        superpowers,
-        famousQuotes,
-      },
-      { new: true }
-    );
+    const character = await Character.findByIdAndUpdate(req.params.id, req.body, { new: true });
 
     if (!character) {
       res.status(404).send('Character not found');
@@ -86,7 +64,7 @@ async function view(req, res) {
   if (!character) {
     res.status(404).send('Character not found');
   } else {
-    res.render('characters/profile', { title: 'Character Profile', character });
+    res.render('characters/show', { title: 'Character Profile', character });
   }
 }
 

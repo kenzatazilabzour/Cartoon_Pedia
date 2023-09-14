@@ -16,11 +16,11 @@ router.post('/new', ensureLoggedIn, charactersCtrl.create);
 router.get('/:id/edit', ensureLoggedIn, charactersCtrl.edit);
 
 // Handle the update of a character
-router.post('/:id/edit', ensureLoggedIn, charactersCtrl.update);
+router.put('/:id', ensureLoggedIn, charactersCtrl.update);
 
 // Display the character profile
 router.get('/:id', charactersCtrl.view);
 
-router.delete('/:id', charactersCtrl.delete);
+router.delete('/:id', ensureLoggedIn, charactersCtrl.delete);
 
 module.exports = router;

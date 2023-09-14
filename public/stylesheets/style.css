@@ -9,6 +9,12 @@ body {
   line-height: 1.6;
 }
 
+nav img {
+  width: 34px;
+  object-fit: contain;
+  margin-right: auto;
+}
+
 nav a {
   color: rgb(116, 114, 114);
   text-decoration: none;

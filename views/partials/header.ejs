@@ -1,9 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CartoonPedia</title>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+</head>
+<body>
 <header>
-  <h1>CartoonPedia</h1>
-  <link rel="stylesheet" type="text/css" href="/public/stylesheets/style.css"/>
+
   <nav>
     <img src="/images/.svg">
-    <a href="/home" <%- title==='Home' ? 'class="active"' : '' %>> Home </a>
+    <a href="/" <%- title==='Home' ? 'class="active"' : '' %>> Home </a>
     <a href="/characters" <%- title==='All Characters' ? 'class="active"' : '' %>> ALL Characters</a>
     <% if (user) { %>
       <a href="/episodes/new" <%- title==='Add episodes' ? 'class="active"' : '' %>>ADD Episodes</a>

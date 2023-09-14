@@ -4,13 +4,14 @@ const episodeSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
+    unique: true,
   },
   description: String,
   releaseDate: Date,
-  character: {
+  characters: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Character',
-  },
+  }],
 
 });
 
