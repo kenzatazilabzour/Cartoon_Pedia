@@ -17,10 +17,7 @@ router.post('/episode', episodesCtrl.create);
 // Route to display a form for editing an episode
 router.get('/episodes/:id/edit', episodesCtrl.edit);
 
-// Route to update an episode
-//router.put('/episodes/:id', episodesCtrl.update);
-
 // Route to delete an episode
-//router.delete('/episodes/:id', episodesCtrl.delete);
+router.delete('/episodes/:id', episodesCtrl.delete);
 
 module.exports = router;

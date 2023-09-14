@@ -4,21 +4,23 @@ const charactersCtrl = require('../controllers/characters');
 const ensureLoggedIn = require('../config/ensureLoggedIn');
 
 // Display the list of all characters
-router.get('/', charactersCtrl.listCharacters);
+router.get('/', charactersCtrl.index);
 
 // Display the form for creating a new character
-router.get('/new', ensureLoggedIn, charactersCtrl.newCharacter);
+router.get('/new', ensureLoggedIn, charactersCtrl.new);
 
 // Handle the creation of a new character
-router.post('/new', ensureLoggedIn, charactersCtrl.createCharacter);
+router.post('/new', ensureLoggedIn, charactersCtrl.create);
 
 // Display the form for editing a character
-router.get('/:id/edit', ensureLoggedIn, charactersCtrl.editCharacter);
+router.get('/:id/edit', ensureLoggedIn, charactersCtrl.edit);
 
 // Handle the update of a character
-router.post('/:id/edit', ensureLoggedIn, charactersCtrl.updateCharacter);
+router.post('/:id/edit', ensureLoggedIn, charactersCtrl.update);
 
 // Display the character profile
-router.get('/:id', charactersCtrl.viewCharacter);
+router.get('/:id', charactersCtrl.view);
+
+router.delete('/:id', charactersCtrl.delete);
 
 module.exports = router;

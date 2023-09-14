@@ -1,6 +1,16 @@
 const Character = require('../models/character');
 
-async function listCharacters(req, res) {
+module.exports = {
+  index,
+  new: newCharacter,
+  create,
+  edit,
+  update,
+  view,
+  delete: deleteCharacter,
+};
+
+async function index(req, res) {
   try {
     const characters = await Character.find();
     res.render('characters/index', { title: 'All Characters', characters });
@@ -14,7 +24,7 @@ async function newCharacter(req, res) {
   res.render('characters/new', { title: 'Add Character', error });
 }
 
-async function createCharacter(req, res) {
+async function create(req, res) {
   const { name, image, biography, superpowers, famousQuotes } = req.body;
 
   const character = new Character({
@@ -34,7 +44,7 @@ async function createCharacter(req, res) {
   }
 }
 
-async function editCharacter(req, res) {
+async function edit(req, res) {
   const character = await Character.findById(req.params.id);
 
   if (!character) {
@@ -44,7 +54,7 @@ async function editCharacter(req, res) {
   }
 }
 
-async function updateCharacter(req, res) {
+async function update(req, res) {
   const { name, image, biography, superpowers, famousQuotes } = req.body;
 
   try {
@@ -70,7 +80,7 @@ async function updateCharacter(req, res) {
   }
 }
 
-async function viewCharacter(req, res) {
+async function view(req, res) {
   const character = await Character.findById(req.params.id);
 
   if (!character) {
@@ -80,11 +90,16 @@ async function viewCharacter(req, res) {
   }
 }
 
-module.exports = {
-  listCharacters,
-  newCharacter,
-  createCharacter,
-  editCharacter,
-  updateCharacter,
-  viewCharacter,
-};
+async function deleteCharacter(req, res) {
+  try {
+    const character = await Character.findByIdAndDelete(req.params.id);
+
+    if (!character) {
+      res.status(404).send('Character not found');
+    } else {
+      res.redirect('/characters');
+    }
+  } catch (error) {
+    res.status(500).send('Error deleting character');
+  }
+}

@@ -1,7 +1,14 @@
 const User = require('../models/user');
 
+module.exports = {
+  index,
+  view,
+  create,
+  new: newUser,
+};
+
 // Display a list of all users
-async function listUser(req, res) {
+async function index(req, res) {
   try {
     const users = await User.find();
     res.render('user/index', { title: 'All User', user });
@@ -11,7 +18,7 @@ async function listUser(req, res) {
 }
 
 // Display details for a specific user
-async function viewUser(req, res) {
+async function view(req, res) {
   const user = await User.findById(req.params.id);
 
   if (!user) {
@@ -22,7 +29,7 @@ async function viewUser(req, res) {
 }
 
 // Create a new user
-async function createUser(req, res) {
+async function create(req, res) {
   const { username, email, password } = req.body;
 
   const user = new User({
@@ -43,10 +50,3 @@ async function createUser(req, res) {
 async function newUser(req, res) {
   res.render('user/new', { title: 'Add User' });
 }
-
-module.exports = {
-  listUser,
-  viewUser,
-  createUser,
-  newUser,
-};
