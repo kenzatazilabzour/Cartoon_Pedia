@@ -31,10 +31,10 @@ https://cartoon-pedia-7bf819acb695.herokuapp.com/
 https://trello.com/b/JAhUQGLt/project-2
 
 ## Screen Shots
-![Cartoon](images/cartoons.png)
-![Screenshot 1](images/allCharacters.png)
-![Screenshot 2](images/allEpisodes.png)
-![screenshot 3](images/home.png)
+![Cartoon](/public/images/cartoons.png)
+![Screenshot 1](/public/images/allCharacters.png)
+![Screenshot 2](public/images/allEpisodes.png)
+![screenshot 3](/public/images/home.png)
 
 ## Technologies Used
 
