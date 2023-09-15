@@ -1,8 +1,8 @@
-Cartoon Web App
+# Cartoon Web App
 
 Welcome to the Cartoon Web App, a playful and colorful web application to showcase cartoon characters and their profiles.
 
-Table of Contents
+## Table of Contents
 
 Introduction
 Features
@@ -13,40 +13,46 @@ Enhancement
 Contributing
 License
 
-Introduction
+## Introduction
 
 The Cartoon Web App is a simple web application built with HTML, CSS, and JavaScript (with EJS templates) that allows you to display cartoon character profiles. It's designed with a cute and cartoon-themed aesthetic, making it perfect for showcasing your favorite characters.
 
-Features
+## Features
 
 Display detailed character profiles, including name, image, biography, superpowers, famous quotes, and related episodes.
 Delete characters (for authenticated users) and edit character information.
 Fun and playful cartoon-themed design.
 Easy customization to match your specific cartoon theme.
 
-Getting Started
+## Getting Started
 
 To get started with the Cartoon Web App, follow :
+https://cartoon-pedia-7bf819acb695.herokuapp.com/
+https://trello.com/b/JAhUQGLt/project-2
 
-Screen Shots
+## Screen Shots
+![Cartoon](images/cartoons.png)
+![Screenshot 1](images/allCharacters.png)
+![Screenshot 2](images/allEpisodes.png)
+![screenshot 3](images/home.png)
 
-Technologies Used
+## Technologies Used
 
 EJS
 CSS
 JavaScript
 
-Enhancements
+## Enhancements
 
 add more icebox features
 add a search functionality
 add comments and ratings
 create a content management system
 
-Contributing
+## Contributing
 
 Contributions are welcome! If you have any ideas, suggestions, or improvements for the Cartoon Web App, feel free to open an issue or submit a pull request. We'd love to hear from you.
 
-License
+## License
 
 This project is licensed under the MIT License. Feel free to use, modify, and distribute the code as per the terms of the license.
