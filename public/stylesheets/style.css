@@ -4,7 +4,10 @@ body, h1, h2, h3, p {
 }
 
 body {
-  background-color: #5c5b5b;
+  background-image: url('../images/background.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
   font-family: Arial, sans-serif;
   line-height: 1.6;
   height: 100vh;
@@ -27,7 +30,7 @@ nav a:last-child {
 }
 
 nav a {
-  color: rgb(195, 121, 25);
+  color: rgb(245, 184, 0);
   text-decoration: none;
   margin: 0 10px;
   padding: 5px 10px;
@@ -51,31 +54,90 @@ nav a:hover {
 h1 {
   font-size: 2rem;
   margin-bottom: 20px;
+  font-size: 36px;
+  color: #ffcc00;
+  text-shadow: 2px 2px 4px #000;
+  padding: 20px;
+  text-align: center;
 }
 
 h2 {
-  font-size: 1.5rem;
+  font-size: 24px;
   margin-bottom: 15px;
+  color: #fff;
+  text-shadow: 2px 2px 4px #000;
 }
 
 p {
-  margin-bottom: 15px;
+  margin-bottom: 25px;
 }
 
-.button {
+.character-quotes  {
+  font-size: 16px;
+  list-style-type: disc;
+  padding-left: 20px;
+  font-size: 20px;
+  margin-top: 20px;
+}
+
+
+.character-episodes {
+  margin-top: 20px;
+  font-size: 24px;
+  color: #333;
+  list-style-type: none;
+  padding: 0;
+  font-size: 16px;
+  margin-bottom: 10px;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.main-content {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.action-button {
   display: inline-block;
   padding: 10px 20px;
   background-color: #007bff;
   color: #fff;
+  text-align: center;
   text-decoration: none;
-  border-radius: 4px;
-  transition: background-color 0.3s;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.action-buttons button {
+  padding: 10px 20px;
+  background-color: #ffcc00;
+  color: #fff;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .button:hover {
-  background-color: #0056b3;
+  background-color: #ff9900;
+}
+.action-buttons button:hover {
+  background-color: #ff9900;
 }
 
+.action-buttons a {
+  text-decoration: none;
+  color: #007bff;
+
+}
 
 footer {
   text-align: center;
@@ -106,4 +168,25 @@ footer {
   flex-direction: column;
   align-items: center;
   margin-top: 5rem;
+}
+.character-image {
+  display: center;
+  margin: 20px auto;
+  max-width: 100%;
+  height: auto;
+  border: 3px solid #ffcc00;
+  border-radius: 10px;
+}
+
+.character-biography {
+  padding: 20px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.character-superpowers {
+  margin-top: 20px;
+  font-size: 20px;
 }
